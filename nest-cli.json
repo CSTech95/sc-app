@@ -1,4 +1,30 @@
 {
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src"
+  "sourceRoot": "apps/nestjs-dockerized/src",
+  "monorepo": true,
+  "root": "apps/nestjs-dockerized",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/nestjs-dockerized/tsconfig.app.json"
+  },
+  "projects": {
+    "nestjs-dockerized": {
+      "type": "application",
+      "root": "apps/nestjs-dockerized",
+      "entryFile": "main",
+      "sourceRoot": "apps/nestjs-dockerized/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/nestjs-dockerized/tsconfig.app.json"
+      }
+    },
+    "memos": {
+      "type": "application",
+      "root": "apps/memos",
+      "entryFile": "main",
+      "sourceRoot": "apps/memos/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/memos/tsconfig.app.json"
+      }
+    }
+  }
 }

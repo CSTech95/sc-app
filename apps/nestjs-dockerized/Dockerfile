@@ -17,5 +17,5 @@ COPY . .
 
 RUN npm run build
 
-EXPOSE 8080
-CMD [ "node", "dist/main" ]
+EXPOSE 8081
+CMD [ "node", "dist/apps/nestjs-dockerized/main.js" ]
